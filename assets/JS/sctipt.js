@@ -61,5 +61,20 @@ function getDadJoke() {
   });
 } 
 
+//ATTIRE FUNCTION
+// needs to be tested : weather objects from json API call need to be reviewed and listed below, and then put div id tag on html page, ie div id=""
+
+// function suggestAttire(weatherCondition) {
+//   const attireDiv = document.getElementById('attire');
+//   if (weatherCondition.toLowerCase().includes('rain')) {
+//     attireDiv.textContent = "It's rainy! Don't forget your umbrella and raincoat!";
+//   } else if (weatherCondition.toLowerCase().includes('clearSky')) {
+//     attireDiv.textContent = "Don't forget your shades!";
+//   } else if (weatherCondition.toLowerCase().includes('sun')) {
+//     attireDiv.textContent = "It's sunny! Remember to wear sunscreen and sunglasses!";
+//   } else {
+//     attireDiv.textContent = "Consider checking the weather forecast for attire suggestions.";
+//   }
+ 
 
 
