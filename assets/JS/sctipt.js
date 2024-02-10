@@ -61,6 +61,55 @@ function getDadJoke() {
   });
 } 
 
+//THIS IS COMMENTED OUT UNTIL WE HAVE UP AND RUNNING!!!
+// function getGif()
+// // needs to call file folder: GIF
+
+
+// {
+//   // research how to call img folder from desktop in JS within API
+//   const getGif=gif[0].gif
+// }
+// // Display the gif
+// const gif = document.getElementById(getGif);
+
+
+
+
+// function displayRandomGif() {
+//   // Array of URLs for your GIFs
+//   const gifUrls = [
+//     //PATH TO IMAGES IN PROJECT FOLDER GOES HERE - NO UNDERSCORES IN GIF NAMES, PLEASE, IE GIF1, GIF2//
+//     'url_to_gif_1',
+//     'url_to_gif_2',
+//     'url_to_gif_3',
+//     // Add more URLs as needed
+//   ];
+
+
+//   // Get a random index within the range of the gifUrls array
+//   const randomIndex = Math.floor(Math.random() * gifUrls.length);
+
+
+// //h2 element to call in the front:
+
+
+// { <h2>getGif</h2>
+// <p>$(getGif)</p> }
+
+
+//   // Get the random GIF URL
+//   const randomGifUrl = gifUrls[randomIndex];
+
+
+//   // Display the GIF on the page
+//   const gifDiv = document.getElementById('jokeGif');
+//   gifDiv.innerHTML = `
+//     <img src="${randomGifUrl}" alt="Random GIF">
+//   `;
+// }
+
+
 //ATTIRE FUNCTION
 // needs to be tested : weather objects from json API call need to be reviewed and listed below, and then put div id tag on html page, ie div id=""
 
