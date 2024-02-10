@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dad jokes & weather</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APP NAME!</title>
+  <script src="./assets/css/styles.css"></script>
 </head>
 <body>
-    
+  <h1>Get Current Weather</h1>
+  <form id="weatherForm">
+    <label for="zipCode">Enter Zip Code:</label>
+    <input type="text" id="zipCode" name="zipCode" required>
+    <button type="submit">Get Weather</button>
+  </form>
+
+  <div id="weatherInfo"></div>
+  <div id="dadJoke"></div>
+  <div id="getGif"></div>
+  <div id="weatherCondition"></div>
+
+  <script src="jquery-3.7.1.min.js"></script>
+  <script src="assets/JS/sctipt.js"></script>
 </body>
-</html>
