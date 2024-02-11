@@ -1,3 +1,6 @@
+
+var gifContainer=document.getElementById("getGif")
+
 document.getElementById('weatherForm').addEventListener('submit', function(event) {
   event.preventDefault();
 
@@ -17,6 +20,11 @@ document.getElementById('weatherForm').addEventListener('submit', function(event
     .then(response => response.json())
     .then(weatherData => {
       // Display weather information
+
+      console.log (weatherData.weather[0].description);
+      getWeatherGifs(weatherData.weather[0].description);
+
+
       const weatherInfoDiv = document.getElementById('weatherInfo');
       weatherInfoDiv.innerHTML = `
         <h2>Current Weather</h2>
@@ -36,6 +44,33 @@ weatherData.weather
       console.error('Error:', error);
     });
 });
+
+
+
+// ***! added code using giphy API to get image, max 1 per return out of list of 3 conditional to weather response/object
+function getWeatherGifs(weatherCondition) {
+  var urlArr=[]
+  
+  // limit paramater below, "&limit..." changes giphy limit!! (currently have 3)!!
+  var url = `https://api.giphy.com/v1/gifs/search?q=${weatherCondition}&limit=3&lang=en&api_key=DBjL2gtyGZ0vyqpWKwrloTELR86cp2TC`;
+  fetch(url)
+  .then(response => {
+    // console.log(response)
+    return response.json()
+  })
+  .then(answer => {
+    gifContainer.innerHTML='';
+    // console.log(answer)
+    var array = answer.data
+      console.log (array)
+      const randomIndex = Math.floor(Math.random() * array.length)
+      console.log(array[randomIndex].id)
+      var giphyImg=document.createElement("img")
+      // after images. --> you can change size of giphy using images keys url code
+      giphyImg.setAttribute("src", array[randomIndex].images.original.url)
+      gifContainer.appendChild(giphyImg)
+  })
+}
 
 function getDadJoke() {
   fetch('https://api.api-ninjas.com/v1/dadjokes?limit=1', {
@@ -60,6 +95,5 @@ function getDadJoke() {
     console.error('Error:', error);
   });
 } 
-
 
 
