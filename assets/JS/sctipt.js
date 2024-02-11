@@ -1,3 +1,5 @@
+var gifContainer=document.getElementById("getGif")
+
 document.getElementById('weatherForm').addEventListener('submit', function(event) {
   event.preventDefault();
 
@@ -27,6 +29,9 @@ document.getElementById('weatherForm').addEventListener('submit', function(event
 
       // Display attire suggestion based on weather condition
       displayAttireSuggestion(weatherData.weather[0].description);
+      
+      // Display GIF
+      getWeatherGifs(weatherData.weather[0].description);
 
       // Call function to get dad joke
       getDadJoke();
@@ -35,29 +40,6 @@ document.getElementById('weatherForm').addEventListener('submit', function(event
       console.error('Error:', error);
     });
 });
-
-function getDadJoke() {
-  fetch('https://api.api-ninjas.com/v1/dadjokes?limit=1', {
-    headers: {
-      'X-Api-Key': 'rEJQDvZhoRkHeGUuNv/8Lw==wykGgqxEBWyA81NE'
-    }
-  })
-  .then(response => response.json())
-  .then(data => {
-    // Get the dad joke text
-    const jokeText = data[0].joke;
-
-    // Display the dad joke on the page
-    const dadJokeDiv = document.getElementById('dadJoke');
-    dadJokeDiv.innerHTML = `
-      <h2>Dad Joke</h2>
-      <p>${jokeText}</p>
-    `;
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
-}
 
 // Map weather conditions to attire suggestions
 const attireSuggestions = {
@@ -97,20 +79,53 @@ function displayAttireSuggestion(weatherCondition) {
   }
 };
 
-//ATTIRE FUNCTION
-// needs to be tested : weather objects from json API call need to be reviewed and listed below, and then put div id tag on html page, ie div id=""
+// ***! added code using giphy API to get image, max 1 per return out of list of 3 conditional to weather response/object
+function getWeatherGifs(weatherCondition) {
+  var urlArr=[]
+  
+  // limit paramater below, "&limit..." changes giphy limit!! (currently have 3)!!
+  var url = `https://api.giphy.com/v1/gifs/search?q=${weatherCondition}&limit=3&lang=en&api_key=DBjL2gtyGZ0vyqpWKwrloTELR86cp2TC`;
+  fetch(url)
+  .then(response => {
+    // console.log(response)
+    return response.json()
+  })
+  .then(answer => {
+    gifContainer.innerHTML='';
+    // console.log(answer)
+    var array = answer.data
+      console.log (array)
+      const randomIndex = Math.floor(Math.random() * array.length)
+      console.log(array[randomIndex].id)
+      var giphyImg=document.createElement("img")
+      // after images. --> you can change size of giphy using images keys url code
+      giphyImg.setAttribute("src", array[randomIndex].images.original.url)
+      gifContainer.appendChild(giphyImg)
+  })
+};
 
-// function suggestAttire(weatherCondition) {
-//   const attireDiv = document.getElementById('attire');
-//   if (weatherCondition.toLowerCase().includes('rain')) {
-//     attireDiv.textContent = "It's rainy! Don't forget your umbrella and raincoat!";
-//   } else if (weatherCondition.toLowerCase().includes('clearSky')) {
-//     attireDiv.textContent = "Don't forget your shades!";
-//   } else if (weatherCondition.toLowerCase().includes('sun')) {
-//     attireDiv.textContent = "It's sunny! Remember to wear sunscreen and sunglasses!";
-//   } else {
-//     attireDiv.textContent = "Consider checking the weather forecast for attire suggestions.";
-//   }
+function getDadJoke() {
+  fetch('https://api.api-ninjas.com/v1/dadjokes?limit=1', {
+    headers: {
+      'X-Api-Key': 'rEJQDvZhoRkHeGUuNv/8Lw==wykGgqxEBWyA81NE'
+    }
+  })
+  .then(response => response.json())
+  .then(data => {
+    // Get the dad joke text
+    const jokeText = data[0].joke;
+
+    // Display the dad joke on the page
+    const dadJokeDiv = document.getElementById('dadJoke');
+    dadJokeDiv.innerHTML = `
+      <h2>Dad Joke</h2>
+      <p>${jokeText}</p>
+    `;
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+};
  
 
 
