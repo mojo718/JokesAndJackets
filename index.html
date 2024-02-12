@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>APP NAME!</title>
   <script src="./assets/css/styles.css"></script>
-</head>
-<body>
-  <h1>Get Current Weather</h1>
-  <form id="weatherForm">
-    <label for="zipCode">Enter Zip Code:</label>
-    <input type="text" id="zipCode" name="zipCode" required>
-    <button type="submit">Get Weather</button>
-  </form>
-
-  <div id="weatherInfo"></div>
-  <div id="getGif"></div>
-  <div id="dadJoke"></div>
-  <div id=""></div>
-
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css"
+    crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/js/foundation.min.js"
+    crossorigin="anonymous"></script>
   <script src="jquery-3.7.1.min.js"></script>
-  <script src="assets/JS/sctipt.js"></script>
+</head>
+
+<body>
+  <div class="row">
+    <div class="column small 12">
+      <h1 class="text-center">Get Current Weather</h1>
+      <form id="weatherForm" class="text-center">
+        <label for="zipCode">Enter Zip Code:</label>
+        <input type="text" id="zipCode" name="zipCode" required class="zipInput">
+        <button type="submit" class="button">Get Weather</button>
+      </form>
+    </div>
+  </div>
+
+    <div id="weatherInfo"></div>
+    <div id="getGif"></div>
+    <div id="dadJoke"></div>
+    <div id=""></div>
+
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="assets/JS/sctipt.js"></script>
 </body>

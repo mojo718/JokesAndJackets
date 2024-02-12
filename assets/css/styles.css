@@ -1,0 +1,9 @@
+.text-center {
+    text-align: center;
+  }
+  
+  .zipInput {
+    width: 100Px; /* Adjust as needed */
+    text-align: center;
+    margin: 0 auto; /* Center horizontally */
+  }
