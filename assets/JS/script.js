@@ -3,6 +3,12 @@ var gifContainer=document.getElementById("getGif")
 
 document.getElementById('weatherForm').addEventListener('submit', function(event) {
   event.preventDefault();
+// section to toogle header and Zip form on/off
+  document.getElementById("weatherForm").style.display = "none"
+  document.getElementById("header").style.display = "none"
+  document.getElementById("weatherInfo").style.display = "block"
+  document.getElementById("getGif").style.display = "block"
+  document.getElementById("dadJoke").style.display = "block"
 
   // Get the zip code entered by the user
   const zipCode = document.getElementById('zipCode').value.trim();
