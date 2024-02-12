@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>APP NAME!</title>
+  <title>TestApp</title>
   <link rel="stylesheet" href="./assets/css/styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css"
     crossorigin="anonymous">
@@ -14,33 +14,47 @@
 </head>
 
 <body>
+<!-- header section -->
   <h1 id="header" class="text-center">What should I wear today?</h1>
   <div class="grid-container">
     <div class="grid-x align-center">
-
       <div class="column small-6">
-
-
         <form id="weatherForm" class="text-center">
           <label for="zipCode">Enter Zip Code:</label>
           <input class="zipInput" type="text" id="zipCode" name="zipCode" required>
           <button type="submit" class="button">Get Weather</button>
+          <img src="./assets/img/Woman looking in closet.jpg" alt="Image description">
         </form>
       </div>
     </div>
 
-    <div class="grid-container">
-      <div class="grid-x align-center">
-        <div class="column small-6 text-center">
-          <div id="weatherInfo"></div>
-          <div id="getGif"></div>
-
-          <div id="dadJoke"></div>
-
-          <div id=""></div>
+    <!-- weatherInfo, getGif, dadjoke cards section -->
+    <div class="grid-x align-center">
+        <div class="column small-10 medium-8 large-6">
+          <div class="card bg-tan">
+            <div class="card-section text-center" id="weatherInfo"></div>
+          </div>
         </div>
       </div>
-    </div>
+  
+      <div class="grid-x align-center">
+        <div class="column small-10 medium-8 large-6">
+          <div class="card bg-tan">
+            <div class="card-section text-center" id="getGif"></div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="grid-x align-center">
+        <div class="column small-10 medium-8 large-6">
+          <div class="card bg-tan">
+            <div class="card-section text-center" id="dadJoke"></div>
+          </div>
+        </div>
+      </div>
+
+
+  
 
 
 
