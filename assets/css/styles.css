@@ -1,0 +1,39 @@
+body {
+       background-color: rgb(223, 223, 207) !important;
+}
+
+.bg-tan {
+    background-color: rgb(223, 223, 207) !important;
+
+}
+
+.text-center {
+    text-align: center;
+}
+
+#header {
+    background-image: url("/assets/img/what-should-i-wear-today.jpg");
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 5cap;
+    font-style: italic;
+    }
+
+label[for="zipCode"] {
+    font-size: 40px; 
+  }
+
+
+ #weatherInfo,#getGif,#dadJoke {
+    display: none;
+
+ }
+
+  
+.zipInput {
+    width: 300px;
+   
+    text-align: center;
+    margin: 50px auto;
+   
+}
