@@ -2,6 +2,7 @@ var gifContainer=document.getElementById("getGif")
 
 document.getElementById('weatherForm').addEventListener('submit', function(event) {
   event.preventDefault();
+
 // added to show\hide various elements after submit
   document.getElementById("weatherForm").style.display = "none"
   document.getElementById("header").style.display = "none"
@@ -9,6 +10,7 @@ document.getElementById('weatherForm').addEventListener('submit', function(event
   document.getElementById("getGif").style.display = "block"
   document.getElementById("dadJoke").style.display = "block"
   document.getElementById("weatherCondition").style.display = "block"
+
 
   // Get the zip code entered by the user
   const zipCode = document.getElementById('zipCode').value.trim();
