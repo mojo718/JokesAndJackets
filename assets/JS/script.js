@@ -63,7 +63,7 @@ function fetchWeatherData(zipCode) {
   $("#footer").show();
 
   // Make API call to Zip Code Geocoding API
-  fetch(`http://api.openweathermap.org/geo/1.0/zip?zip=${zipCode},US&appid=e75149958ade77779ccbeec46ce0a566`)
+  fetch(`https://api.openweathermap.org/geo/1.0/zip?zip=${zipCode},US&appid=e75149958ade77779ccbeec46ce0a566`)
     .then(response => response.json())
     .then(data => {
       // Your existing code
