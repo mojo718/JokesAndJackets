@@ -1,18 +1,19 @@
 $(document).foundation();
 
-var gifContainer = document.getElementById("getGif")
+var gifContainer = document.getElementById("getGif");
+
+// Initialize zip codes array from local storage or create an empty array
+var zipCodes = JSON.parse(localStorage.getItem('zipCodes')) || [];
 
 // event listener to show "enter zip"
 $('#startButton').on('click', function () {
   $('#zipModal').foundation('open');
-  console.log("Modal Launch")
+  console.log("Modal Launch");
 });
 
 // Function for Zip submission
 $('#zipForm').on('submit', function (event) {
   event.preventDefault();
-
-
 
   // Get the zip code entered by the user
   const zipCode = document.getElementById('zipCode').value.trim();
@@ -23,6 +24,15 @@ $('#zipForm').on('submit', function (event) {
     return;
   }
 
+  // Check if the zip code already exists in local storage
+  if (!zipCodes.includes(zipCode)) {
+    // Add the new zip code to the array
+    zipCodes.push(zipCode);
+
+    // Save the updated zip codes array to local storage
+    localStorage.setItem('zipCodes', JSON.stringify(zipCodes));
+  }
+
   // this closes Modal
   $('#zipModal').foundation('close');
 
@@ -31,7 +41,6 @@ $('#zipForm').on('submit', function (event) {
 });
 
 $(document).ready(function () {
-
   // Function to animate the flashing text
   function animateFlashingText() {
     $('.flash-text').fadeOut(1000).fadeIn(1000);
@@ -52,9 +61,6 @@ function fetchWeatherData(zipCode) {
   $("#dadJoke").show();
   $("#weatherCondition").show();
   $("#footer").show();
-
-
-
 
   // Make API call to Zip Code Geocoding API
   fetch(`http://api.openweathermap.org/geo/1.0/zip?zip=${zipCode},US&appid=e75149958ade77779ccbeec46ce0a566`)
@@ -182,4 +188,7 @@ function fetchWeatherData(zipCode) {
         console.error('Error:', error);
       });
   };
-}
+};
+
+
+
