@@ -26,7 +26,7 @@ body {
 }
 
 #header {
-    background-image: url('../img/what-should-i-wear-today.jpg')
+    background-image: url('../img/what-should-i-wear-today.jpg');
     padding-top: 60px;
     padding-bottom: 60px;
     font-size: 5cap;
