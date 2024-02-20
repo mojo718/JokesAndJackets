@@ -55,7 +55,6 @@ function fetchWeatherData(zipCode) {
   $("#weatherForm").hide();
   $("#startButton").hide();
   $("#closet").hide();
-  $("#header").hide();
   $("#weatherInfo").show();
   $("#getGif").show();
   $("#dadJoke").show();
